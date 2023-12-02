@@ -1,11 +1,23 @@
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { toggleMenu } from "../utils/SideBarSlice";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const toggleMenuHandler = () => {
+    dispatch(toggleMenu());
+  };
+
   return (
     <div className="grid grid-flow-col shadow-lg py-3 px-2">
       {/* Menu & Logo */}
       <div className="flex items-center gap-5 ml-3 col-span-1">
-        <i class="fa-solid fa-bars fa-lg" style={{ color: "#000000" }}></i>
+        <i
+          class="fa-solid fa-bars fa-lg"
+          style={{ color: "#000000", cursor: "pointer" }}
+          onClick={() => toggleMenuHandler()}
+        ></i>
 
         <div className="flex gap-1 items-center">
           <i
