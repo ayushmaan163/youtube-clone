@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
-    <div className="grid grid-flow-col shadow-lg py-4 px-2">
+    <div className="grid grid-flow-col shadow-lg py-3 px-2">
       {/* Menu & Logo */}
       <div className="flex items-center gap-5 ml-3 col-span-1">
         <i class="fa-solid fa-bars fa-lg" style={{ color: "#000000" }}></i>
@@ -10,9 +12,14 @@ const Header = () => {
             class="fa-brands fa-youtube fa-2xl"
             style={{ color: "#ff0000" }}
           ></i>
-          <span className="text-2xl font-bold" style={{ fontFamily: "Oswald" }}>
-            YouTube
-          </span>
+          <Link to="/">
+            <span
+              className="text-2xl font-bold"
+              style={{ fontFamily: "Oswald" }}
+            >
+              YouTube
+            </span>
+          </Link>
         </div>
       </div>
 
