@@ -11,7 +11,7 @@ function App() {
       <Provider store={store}>
         <Header />
         <Outlet />
-        <Footer />
+        {/* <Footer /> */}
       </Provider>
     </>
   );
