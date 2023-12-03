@@ -51,7 +51,7 @@ const Header = () => {
       </div>
 
       {/* Profile */}
-      <div className="col-span-1 flex justify-center items-center bg-gray-300 border-black rounded-xl border-2">
+      <div className="col-span-1 flex justify-center items-center">
         <i class="fa-solid fa-user" style={{ color: "#000000" }}></i>
       </div>
     </div>
