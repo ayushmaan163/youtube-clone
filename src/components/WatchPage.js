@@ -14,7 +14,7 @@ const WatchPage = () => {
   }, []);
 
   return (
-    <div className="m-5 ">
+    <div className="m-5">
       {/* Video Player, description, comments */}
       <div className="col-span-7">
         <iframe
