@@ -17,7 +17,7 @@ const SideBar = () => {
   // if(!isMenuOpen) return null;
 
   return !isMenuOpen ? null : (
-    <div className="w-48 shadow-lg pl-4 min-h-screen">
+    <div className="w-48 shadow-lg pl-4 h-auto absolute z-30 bg-white pb-2">
       <div className="flex flex-col gap-3 pt-5">
         <div className="flex justify-start items-center gap-5 hover:bg-gray-300 hover:border hover:rounded-lg hover:w-40 cursor-pointer p-2">
           <img src={homeIcon} alt="home-icon" className="w-5" />
@@ -77,7 +77,7 @@ const SideBar = () => {
           </div>
         </div>
 
-        <div className="h-0.5 flex justify-center items-center bg-gray-600 w-5/6"></div>
+        {/* <div className="h-0.5 flex justify-center items-center bg-gray-600 w-5/6"></div> */}
       </div>
     </div>
   );
