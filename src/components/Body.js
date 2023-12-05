@@ -4,7 +4,7 @@ import SideBar from "./SideBar";
 
 const Body = () => {
   return (
-    <div className="relative">
+    <div className="relative mt-16">
       <SideBar />
       <Outlet />
     </div>
