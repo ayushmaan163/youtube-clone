@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { toggleMenu } from "../utils/SideBarSlice";
 import { useEffect, useState } from "react";
-import { YOUTUBE_SEARCH_API, YOUTUBE_SEARCH_API_II } from "../config/api";
+import { YOUTUBE_SEARCH_API_II } from "../config/api";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -10,7 +10,7 @@ const Header = () => {
 
   const getSearchSuggestions = async () => {
     // console.log(searchQuery);
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+    const data = await fetch(YOUTUBE_SEARCH_API_II + searchQuery);
     const json = await data.json();
     // console.log(json[1]);
     setSuggestions(json[1]);
