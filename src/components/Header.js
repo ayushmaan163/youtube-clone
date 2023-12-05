@@ -87,7 +87,7 @@ const Header = () => {
                 {suggestions.map((s) => (
                   <li
                     key={s}
-                    className="flex items-center gap-4 py-1 px-3 hover:bg-gray-300 hover:rounded-lg"
+                    className="flex flex-wrap items-center gap-4 py-1 px-3 hover:bg-gray-300 hover:rounded-lg"
                   >
                     <i
                       class="fa-solid fa-magnifying-glass fa-sm"
