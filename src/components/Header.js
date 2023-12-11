@@ -1,13 +1,17 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { toggleMenu } from "../utils/SideBarSlice";
 import { useEffect, useState } from "react";
 import { YOUTUBE_SEARCH_API_II } from "../config/api";
+import { cacheResults } from "../utils/SearchSlice";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const searchCache = useSelector((store) => store.search);
+  const dispatch = useDispatch();
 
   const getSearchSuggestions = async () => {
     // console.log(searchQuery);
@@ -15,6 +19,13 @@ const Header = () => {
     const json = await data.json();
     // console.log(json[1]);
     setSuggestions(json[1]);
+
+    // updating cache
+    dispatch(
+      cacheResults({
+        [searchQuery]: json[1],
+      })
+    );
   };
 
   useEffect(() => {
@@ -23,14 +34,18 @@ const Header = () => {
     // Make an API call after every key press
 
     // If difference between 2 (keystrokes)/(API calls) is < 200ms, decline API call
-    const timer = setTimeout(() => getSearchSuggestions(), 200);
+    const timer = setTimeout(() => {
+      if (searchCache[searchQuery]) {
+        setShowSuggestions(searchCache[searchQuery]);
+      } else {
+        getSearchSuggestions();
+      }
+    }, 200);
 
     return () => {
       clearTimeout(timer);
     };
   }, [searchQuery]);
-
-  const dispatch = useDispatch();
 
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
