@@ -18,8 +18,8 @@ const WatchPage = () => {
       {/* Video Player, description, comments */}
       <div className="col-span-7">
         <iframe
-          width="700"
-          height="400"
+          width="100%"
+          height="600"
           src={"https://www.youtube.com/embed/" + params.get("v")}
           title="YouTube video player"
           frameborder="0"
