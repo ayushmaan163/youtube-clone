@@ -15,7 +15,7 @@ const VideoCard = ({ info }) => {
 
       <div>{info?.snippet?.channelTitle}</div>
 
-      <div>{info?.statistics?.viewCount}</div>
+      <div>{info?.statistics?.viewCount} views</div>
     </div>
   );
 };
