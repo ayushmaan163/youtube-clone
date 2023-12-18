@@ -17,8 +17,8 @@ const SideBar = () => {
   // if(!isMenuOpen) return null;
 
   return !isMenuOpen ? null : (
-    <div className="w-48 shadow-lg pl-4 h-auto absolute z-30 bg-white pb-2">
-      <div className="flex flex-col gap-3 pt-5">
+    <div className="w-48 shadow-lg pl-4 h-[100vh] absolute z-30 bg-white pb-2  overflow-scroll">
+      <div className="flex flex-col gap-3 pt-1">
         <div className="flex justify-start items-center gap-5 hover:bg-gray-300 hover:border hover:rounded-lg hover:w-40 cursor-pointer p-2">
           <img src={homeIcon} alt="home-icon" className="w-5" />
           <h1 className="font-bold">Home</h1>
